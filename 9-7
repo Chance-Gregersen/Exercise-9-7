@@ -1,0 +1,32 @@
+import java.util.Date;
+public class Account {
+	private int id;
+	private double balance;
+	private double anInterest;
+	
+	Account(int newId, double newBalance, double newInterest){
+		id = newId;
+		balance = newBalance;
+		anInterest = newInterest;
+	}
+	
+	 public static void main(String[] args) {
+		    Account Acc1 = new Account(1122, 20000, 4.5);
+		    Date date = new Date();
+		    System.out.println("Account ID: "+Acc1.id);
+		    System.out.println("Your new balance is "+Acc1.getBalance(2500,3000));
+		    System.out.println("The monthly interest is "+Acc1.getMonthlyInterest()); 
+		    System.out.println("This account was created; "+date.toString());
+	 }
+	 double getMonthlyInterestRate() {		
+			return anInterest/12;
+		}
+	 double getMonthlyInterest() {		
+			return getMonthlyInterestRate()*balance;
+		}
+	 public double getBalance(double Withdraw, double Deposit){
+		 double balance1 = balance-Withdraw;
+		 balance = balance1+Deposit;
+		    return balance;
+		  } 
+}
